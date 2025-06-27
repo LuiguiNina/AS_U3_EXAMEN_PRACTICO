@@ -263,6 +263,25 @@ Se aplicó la metodología **OWASP Risk Rating** para evaluar los riesgos identi
 > **Cuadro 2**: Evaluación de impacto y probabilidad de los riesgos identificados.
 
 ---
+
+## 8.3 Matriz de Riesgos
+
+| Riesgo                                         | Causa (Vínculo a Anexo)                                                                                                    | Impacto | Probabilidad | Nivel de riesgo |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|---------|--------------|-----------------|
+| Credenciales sin cifrado                      | [vagrantfile - credenciales expuestas](./evidencias/vagrantfile%20-%20credenciales%20expuestas.png)                        | Alto    | 90%          | Crítico         |
+| Puertos sin restricciones                      | [Puertos sin restricciones](./evidencias/Puertos-sin-restricciones.png)                                                    | Alto    | 80%          | Alto            |
+| Falta de registros de auditoría persistentes   | [vagrant-logs](./evidencias/vagrant-logs.png)                                                                              | Medio   | 85%          | Alto            |
+| Ambiente único sin segmentación                | [ambiente-unico-sin-segmentar](./evidencias/ambiente-unico-sin-segmentar.png)                                              | Alto    | 80%          | Alto            |
+| Cobertura limitada de pruebas                  | [ausencia-pruebas-automatizadas](./evidencias/ausencia-pruebas-automatizadas.png)                                          | Medio   | 70%          | Medio           |
+| Respaldos manuales no verificados              | [Respaldos manuales sin verificar](./evidencias/Respaldos-manuales-sin-verificar.png)                                      | Medio   | 70%          | Medio           |
+| Estado de despliegue inicial                   | [Vagrant status](./evidencias/Vagrant%20status.png)                                                                        | Bajo    | 50%          | Bajo            |
+
+> **Cuadro 3**: Matriz de riesgos con vínculo a las evidencias almacenadas en la carpeta `/evidencias/`.
+
+---
+
+
+---
 # 9. RECOMENDACIONES
 
 ## 9.1 Vínculo hallazgo–recomendación
@@ -315,5 +334,31 @@ Se propone el siguiente plan de acción acordado con la organización para mitig
 | 7  | Automatizar respaldos cifrados y planificar restauraciones trimestrales                              | Infraestructura & DevOps        | 30/09/2025         |
 
 > **Cuadro 6**: Plan de acción definido para la mitigación de los hallazgos.
+
+---
+# 📎 ANEXOS Y EVIDENCIAS
+
+A continuación se listan las evidencias correspondientes a los hallazgos documentados en el informe de auditoría, con enlaces directos a la carpeta `/evidencias/` del repositorio:
+
+- **Anexo A**: [Vagrant status](./evidencias/Vagrant%20status.png)  
+  *Captura del comando `vagrant status` tras el despliegue.*
+
+- **Anexo B**: [vagrantfile - credenciales expuestas](./evidencias/vagrantfile%20-%20credenciales%20expuestas.png)  
+  *Evidencia de credenciales sensibles sin cifrar en el Vagrantfile.*
+
+- **Anexo C**: [Puertos sin restricciones](./evidencias/Puertos-sin-restricciones.png)  
+  *Visualización de la configuración de puertos abiertos sin restricciones.*
+
+- **Anexo D**: [vagrant-logs](./evidencias/vagrant-logs.png)  
+  *Evidencia de la ausencia de logs persistentes durante la provisión.*
+
+- **Anexo E**: [ambiente-unico-sin-segmentar](./evidencias/ambiente-unico-sin-segmentar.png)  
+  *Uso de un solo entorno sin segmentación (dev/test/prod).*
+
+- **Anexo F**: [ausencia-pruebas-automatizadas](./evidencias/ausencia-pruebas-automatizadas.png)  
+  *Cobertura limitada de pruebas automáticas en el script de validación.*
+
+- **Anexo G**: [Respaldos manuales sin verificar](./evidencias/Respaldos-manuales-sin-verificar.png)  
+  *Copia de seguridad manual sin validación ni restauración comprobada.*
 
 ---
